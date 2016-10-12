@@ -6,9 +6,17 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <h1>Inicio de Sesion </h1>
+        <h:form id="FrmInicio" >
+            <h:outputLabel value="Ingrese su Usuario" id="lblLogin" />
+            <h:inputText value="#{inicioMBeans.usuario.logi_usua}" id="txtUsurio"  />
+            <br/>
+            <h:outputLabel value="Ingrese su Clave" id="lblPassword" />
+            <h:inputSecret value="#{inicioMBeans.usuario.pass_usua}" id="txtClave"  />
+            <br/>
+            <h:commandButton id="btnValidar" action="#{inicioMBeans.validar()}" value="Validar" />
+            
+        </h:form>
     </h:body>
 </html>
 
