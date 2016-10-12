@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	
+    <settings cacheModelsEnabled="true" enhancementEnabled="true"
+		maxSessions="64" maxTransactions="64" maxRequests="128" />
+    <transactionManager type="JDBC" >
+        <dataSource type="SIMPLE">
+            <property name="JDBC.Driver" value="com.mysql.jdbc.Driver"/>
+            <property name="JDBC.ConnectionURL" value="jdbc:mysql://localhost/electivoii"/>
+            <property name="JDBC.Username" value="root"/>
+            <property name="JDBC.Password" value=""/>
+        </dataSource>
+    </transactionManager>
+	
+  
+
+  <!-- Lista de XML que contiens las consultas a base de Datos -->
+   
+     <sqlMap resource="ibatis/Usuario.xml" />    
+   
+      
+     
+            
+</sqlMapConfig>

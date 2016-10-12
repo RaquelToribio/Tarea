@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">    
+
+<sqlMap >
+    
+    <select id="validarUsuario"  parameterClass="dto.Usuario" resultClass="dto.Usuario">
+        {CALL validar_usuario(#logi_usua#,#pass_usua#)}
+    </select>
+    <select id="listarUsuarios" resultClass="dto.Usuario">
+        select * from usuario
+    </select>
+    <select id="datosUsuario"  parameterClass="dto.Usuario" resultClass="dto.Usuario">
+        select * from usuario where logi_usua=#logi_usua# and pass_usua=#pass_usua#
+    </select> 
+    <select id="datosUsuarioxDni"  parameterClass="dto.Usuario" resultClass="dto.Usuario">
+        select * from usuario where codi_usua=#codi_usua# 
+    </select>    
+    
+    <insert id="insertUsuario" >
+        INSERT INTO Usuario VALUES (
+        #codi_usua#,
+        #logi_usua#,
+        #pass_usua#)
+    </insert>
+        
+    <update id="updateUsuario" parameterClass="dto.Usuario">
+        UPDATE Usuario SET
+        logi_usua = #logi_usua#,
+        pass_usua = #pass_usua#
+        WHERE
+        codi_usua=#codi_usua#   
+    </update>
+	
+    <delete id="removeUsuario">
+        DELETE FROM Usuario WHERE codi_usua=#codi_usua#
+    </delete>
+
+</sqlMap>
